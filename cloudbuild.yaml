@@ -1,0 +1,10 @@
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['source', 'repos', 'clone', 'bitbucket-interaxon-museconnect']
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ['cp', 'gs://muse-secrets/*', 'secrets/']
+  dir: '/workspace/bitbucket-interaxon-museconnect/'
+#- name: 'gcr.io/cloud-builders/git'
+#  args: ['submodule', 'update', '--init', 'frontend']
+#- name: 'gcr.io/cloud-builders/npm'
+#  args: ['build', '-t', 'gcr.io/my-project-id/myimage', '.']
