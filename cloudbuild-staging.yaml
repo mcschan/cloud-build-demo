@@ -2,4 +2,4 @@ steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['source', 'repos', 'clone', 'github-mcschan-cloud-build-demo']
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['app', 'deploy', '--project=$PROJECT_ID', 'app.yaml']
+  args: ['app', 'deploy', '--project=$PROJECT_ID', '--version=$BRANCH_NAME', '--no-promote', 'app.yaml']
